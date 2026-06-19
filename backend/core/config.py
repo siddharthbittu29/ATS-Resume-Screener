@@ -17,6 +17,7 @@ APP_VERSION='1.0.0'
 APP_DESCRIPTION='analyse resumes against job description using nlp + ml'
 
 ALLOWED_ORIGINS = [
+    #  GPT SUGGEST SOMETHING ELSE
     'https://appapppy-ktwxupi73vqhjzweksze9d.streamlit.app/'
 ]  
 
@@ -34,7 +35,8 @@ SUPPORTED_MIME_TYPES = {
 SUPPORTED_EXTENSIONS = {'.pdf', '.doc', '.docx'}
 
 SPACY_MODEL_PRIMARY="en_core_web_md" #better accuracy
-SPACY_MODEL_SECONDARY='"en_core_web_sm' 
+ #  GPT SUGGEST SOMETHING ELSE
+SPACY_MODEL_SECONDARY = "en_core_web_sm"
 SENTENCE_TRANSFORMER_MODEL = os.getenv("SENTENCE_TRANSFORMER_MODEL", "all-MiniLM-L6-v2")
 
 # Score component weights — this is business logic treated as config
