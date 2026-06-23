@@ -1,6 +1,6 @@
 import logging
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -12,7 +12,7 @@ from backend.core.config import(
     SPACY_MODEL_PRIMARY, 
     SPACY_MODEL_SECONDARY, SENTENCE_TRANSFORMER_MODEL
 )
-# from backend.api.routes import router
+from backend.api.routes import router
 
 logger=logging.getLogger('ats_resume_scorer')
 
@@ -59,7 +59,7 @@ app.add_middleware(
 
 )
 
-# app.include_router(router)
+app.include_router(router)
 
 @app.get('/')
 async def root():
