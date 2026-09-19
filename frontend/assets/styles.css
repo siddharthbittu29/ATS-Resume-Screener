@@ -1,0 +1,2738 @@
+/* ============================================================
+   ATS RESUME SCORER — PREMIUM UI
+   Version 4.0
+   Light + Dark Streamlit Theme
+   ============================================================ */
+
+
+/* ============================================================
+   1. CORE THEME VARIABLES
+   ============================================================ */
+
+:root {
+
+    /* Streamlit theme bridge */
+    --app-bg: var(--background-color, #f5f7fb);
+    --app-surface: var(--secondary-background-color, #ffffff);
+    --app-text: var(--text-color, #111827);
+    --app-primary: var(--primary-color, #4f46e5);
+
+    /* Premium palette */
+    --indigo: #4f46e5;
+    --indigo-light: #818cf8;
+    --indigo-dark: #3730a3;
+
+    --blue: #2563eb;
+    --blue-light: #60a5fa;
+
+    --cyan: #06b6d4;
+    --cyan-light: #22d3ee;
+
+    --emerald: #10b981;
+    --green: #22c55e;
+
+    --amber: #f59e0b;
+    --red: #ef4444;
+
+    /* Light neutrals */
+    --white: #ffffff;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+    --radius-2xl: 24px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-sm:
+        0 1px 3px rgba(15, 23, 42, 0.08);
+
+    --shadow-md:
+        0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --shadow-lg:
+        0 16px 40px rgba(15, 23, 42, 0.14);
+
+    --shadow-primary:
+        0 10px 30px rgba(79, 70, 229, 0.22);
+
+    /* Typography */
+    --font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+/* ============================================================
+   2. GLOBAL RESET
+   ============================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family) !important;
+    color: var(--app-text);
+}
+
+
+/* ============================================================
+   3. STREAMLIT APPLICATION
+   ============================================================ */
+
+.stApp {
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(79, 70, 229, 0.06),
+            transparent 30%
+        ),
+        var(--app-bg) !important;
+
+    color: var(--app-text) !important;
+
+    font-family: var(--font-family) !important;
+}
+
+
+/* Main application */
+
+[data-testid="stAppViewContainer"] {
+    background: var(--app-bg) !important;
+}
+
+[data-testid="stAppViewContainer"] main {
+    background: transparent !important;
+    color: var(--app-text) !important;
+}
+
+
+/* Main content width */
+
+[data-testid="stMainBlockContainer"] {
+    max-width: 1200px !important;
+
+    padding-top: 2rem !important;
+    padding-bottom: 4rem !important;
+
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+
+/* ============================================================
+   4. GLOBAL TEXT
+   ============================================================ */
+
+[data-testid="stMarkdownContainer"] {
+    color: var(--app-text) !important;
+}
+
+[data-testid="stMarkdownContainer"] p {
+    color: var(--app-text) !important;
+}
+
+[data-testid="stMarkdownContainer"] strong {
+    color: var(--app-text) !important;
+}
+
+[data-testid="stMarkdownContainer"] span {
+    color: inherit;
+}
+
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[data-testid="stAppViewContainer"] h1,
+[data-testid="stAppViewContainer"] h2,
+[data-testid="stAppViewContainer"] h3,
+[data-testid="stAppViewContainer"] h4 {
+    color: var(--app-text) !important;
+
+    font-family: var(--font-family) !important;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* ============================================================
+   5. MAIN TITLE — PREMIUM
+   ============================================================ */
+
+[data-testid="stAppViewContainer"] main h1 {
+
+    font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.08 !important;
+
+    margin-top: 0 !important;
+
+    margin-bottom: 0.6rem !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--indigo),
+            var(--blue),
+            var(--cyan)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ============================================================
+   6. SIDEBAR — PREMIUM
+   ============================================================ */
+
+[data-testid="stSidebar"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--app-surface),
+            var(--app-bg)
+        ) !important;
+
+    border-right:
+        1px solid rgba(148, 163, 184, 0.20) !important;
+
+    box-shadow:
+        4px 0 25px rgba(15, 23, 42, 0.05);
+}
+
+
+/* Sidebar content */
+
+[data-testid="stSidebar"] > div:first-child {
+    padding-top: 1.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+
+/* Sidebar headings */
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4 {
+
+    color: var(--app-text) !important;
+
+    font-weight: 750 !important;
+}
+
+
+/* Sidebar normal text */
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label {
+
+    color: var(--app-text) !important;
+}
+
+
+/* ============================================================
+   7. SIDEBAR NAVIGATION BUTTONS
+   ============================================================ */
+
+[data-testid="stSidebar"] .stButton {
+    margin-bottom: 0.55rem !important;
+}
+
+
+[data-testid="stSidebar"] .stButton > button {
+
+    width: 100% !important;
+
+    min-height: 48px !important;
+
+    border-radius: 13px !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.22) !important;
+
+    background:
+        rgba(255, 255, 255, 0.45) !important;
+
+    color: var(--app-text) !important;
+
+    font-weight: 600 !important;
+
+    transition:
+        all 180ms ease !important;
+
+    box-shadow: none !important;
+}
+
+
+[data-testid="stSidebar"] .stButton > button:hover {
+
+    border-color:
+        rgba(79, 70, 229, 0.45) !important;
+
+    background:
+        rgba(79, 70, 229, 0.08) !important;
+
+    color: var(--indigo) !important;
+
+    transform: translateX(3px);
+}
+
+
+/* ============================================================
+   8. ACCOUNT CARD
+   ============================================================ */
+
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(79, 70, 229, 0.06);
+
+    color: var(--slate-500) !important;
+}
+
+
+/* Account email */
+
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] a {
+
+    color: var(--indigo) !important;
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   9. BUTTON SYSTEM
+   ============================================================ */
+
+/* ============================================================
+   9. BUTTON SYSTEM — FIXED STREAMLIT VERSION
+   ============================================================ */
+
+/* Every Streamlit button */
+div[data-testid="stButton"] > button {
+
+    width: 100% !important;
+
+    min-height: 48px !important;
+
+    padding: 0.65rem 1.2rem !important;
+
+    border-radius: 12px !important;
+
+    border: 1px solid #cbd5e1 !important;
+
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 650 !important;
+
+    line-height: 1.2 !important;
+
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease !important;
+}
+
+
+/* Force text inside normal buttons */
+div[data-testid="stButton"] > button p,
+div[data-testid="stButton"] > button span {
+
+    color: #0f172a !important;
+
+    font-weight: 650 !important;
+}
+
+
+/* Hover */
+div[data-testid="stButton"] > button:hover {
+
+    background: #f8fafc !important;
+
+    border-color: #6366f1 !important;
+
+    color: #4f46e5 !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.15) !important;
+}
+
+
+div[data-testid="stButton"] > button:hover p,
+div[data-testid="stButton"] > button:hover span {
+
+    color: #4f46e5 !important;
+}
+
+
+/* ============================================================
+   PRIMARY / ANALYZE BUTTON
+   ============================================================ */
+
+/*
+   This catches Streamlit primary buttons without depending
+   on the old [kind="primary"] selector.
+*/
+
+div[data-testid="stButton"] > button[kind="primary"],
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] {
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5 0%,
+            #2563eb 55%,
+            #06b6d4 100%
+        ) !important;
+
+    border:
+        none !important;
+
+    color:
+        #ffffff !important;
+
+    min-height:
+        52px !important;
+
+    border-radius:
+        14px !important;
+
+    font-size:
+        16px !important;
+
+    font-weight:
+        750 !important;
+
+    letter-spacing:
+        0.01em !important;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.28) !important;
+}
+
+
+/* CRITICAL:
+   Force primary button text to WHITE.
+*/
+
+div[data-testid="stButton"] > button[kind="primary"] p,
+div[data-testid="stButton"] > button[kind="primary"] span,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] p,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] span {
+
+    color:
+        #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+
+    font-weight:
+        750 !important;
+}
+
+
+/* Primary hover */
+
+div[data-testid="stButton"] > button[kind="primary"]:hover,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"]:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #4338ca 0%,
+            #1d4ed8 55%,
+            #0891b2 100%
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    transform:
+        translateY(-3px) !important;
+
+    box-shadow:
+        0 16px 36px rgba(79, 70, 229, 0.35) !important;
+}
+
+
+div[data-testid="stButton"] > button[kind="primary"]:hover p,
+div[data-testid="stButton"] > button[kind="primary"]:hover span,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"]:hover p,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"]:hover span {
+
+    color:
+        #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+}
+
+
+/* Active / clicked */
+
+div[data-testid="stButton"] > button[kind="primary"]:active {
+
+    transform:
+        translateY(0) !important;
+
+    box-shadow:
+        0 6px 16px rgba(79, 70, 229, 0.25) !important;
+}
+
+/* ============================================================
+   10. DOWNLOAD BUTTON
+   ============================================================ */
+
+.stDownloadButton > button {
+
+    min-height: 44px !important;
+
+    border-radius: 12px !important;
+
+    background:
+        var(--app-surface) !important;
+
+    color:
+        var(--app-text) !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.30) !important;
+
+    font-weight: 600 !important;
+
+    transition: all 180ms ease !important;
+}
+
+
+.stDownloadButton > button:hover {
+
+    border-color:
+        var(--indigo) !important;
+
+    color:
+        var(--indigo) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ============================================================
+   11. RADIO / ANALYSIS MODE
+   ============================================================ */
+
+[data-testid="stRadio"] {
+
+    padding:
+        16px 18px;
+
+    border-radius:
+        16px;
+
+    background:
+        var(--app-surface);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.20);
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+[data-testid="stRadio"] label {
+
+    color:
+        var(--app-text) !important;
+
+    font-weight:
+        550 !important;
+}
+
+
+[data-testid="stRadio"] label p {
+
+    color:
+        var(--app-text) !important;
+}
+
+
+/* ============================================================
+   12. FILE UPLOADER — PREMIUM
+   ============================================================ */
+
+[data-testid="stFileUploader"] {
+
+    width: 100%;
+}
+
+
+/* Main drop area */
+
+[data-testid="stFileUploader"] section {
+
+    min-height:
+        145px !important;
+
+    border-radius:
+        18px !important;
+
+    border:
+        2px dashed rgba(79, 70, 229, 0.28) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(79, 70, 229, 0.04),
+            rgba(6, 182, 212, 0.04)
+        ) !important;
+
+    transition:
+        all 200ms ease !important;
+}
+
+
+[data-testid="stFileUploader"] section:hover {
+
+    border-color:
+        var(--indigo) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(79, 70, 229, 0.08),
+            rgba(6, 182, 212, 0.08)
+        ) !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.10);
+}
+
+
+/* Upload button */
+
+[data-testid="stFileUploader"] button {
+
+    border-radius:
+        10px !important;
+
+    background:
+        var(--app-surface) !important;
+
+    border:
+        1px solid rgba(79, 70, 229, 0.30) !important;
+
+    color:
+        var(--app-text) !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+[data-testid="stFileUploader"] button:hover {
+
+    border-color:
+        var(--indigo) !important;
+
+    color:
+        var(--indigo) !important;
+}
+
+
+/* File uploader text */
+
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] label {
+
+    color:
+        var(--app-text) !important;
+}
+
+
+/* ============================================================
+   13. INPUTS
+   ============================================================ */
+
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea {
+
+    background:
+        var(--app-surface) !important;
+
+    color:
+        var(--app-text) !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.30) !important;
+
+    border-radius:
+        12px !important;
+
+    min-height:
+        44px !important;
+}
+
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus {
+
+    border-color:
+        var(--indigo) !important;
+
+    box-shadow:
+        0 0 0 4px rgba(79, 70, 229, 0.12) !important;
+}
+
+
+[data-testid="stTextInput"] label,
+[data-testid="stTextArea"] label {
+
+    color:
+        var(--app-text) !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color:
+        var(--slate-400) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ============================================================
+   14. ALERTS
+   ============================================================ */
+
+[data-testid="stAlert"] {
+
+    border-radius:
+        14px !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.22) !important;
+
+    box-shadow:
+        var(--shadow-sm);
+}
+
+
+/* ============================================================
+   15. INFO BOX
+   ============================================================ */
+
+[data-testid="stAlert"][data-baseweb="notification"] {
+
+    color:
+        var(--app-text) !important;
+}
+
+
+/* ============================================================
+   16. EXPANDERS
+   ============================================================ */
+
+[data-testid="stExpander"] {
+
+    border:
+        1px solid rgba(148, 163, 184, 0.22) !important;
+
+    border-radius:
+        16px !important;
+
+    background:
+        var(--app-surface) !important;
+
+    overflow:
+        hidden;
+}
+
+
+[data-testid="stExpander"] summary {
+
+    color:
+        var(--app-text) !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+[data-testid="stExpander"] summary:hover {
+
+    background:
+        rgba(79, 70, 229, 0.05) !important;
+}
+
+
+/* ============================================================
+   17. CARDS
+   ============================================================ */
+
+.ats-card,
+.card,
+.score-card,
+.stat-card {
+
+    background:
+        var(--app-surface);
+
+    color:
+        var(--app-text);
+
+    border:
+        1px solid rgba(148, 163, 184, 0.20);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+
+.ats-card:hover,
+.card:hover,
+.score-card:hover,
+.stat-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--shadow-md);
+
+    border-color:
+        rgba(79, 70, 229, 0.25);
+}
+
+
+/* ============================================================
+   18. SCORE CARD
+   ============================================================ */
+
+.score-card {
+
+    padding:
+        26px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.score-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--indigo),
+            var(--blue),
+            var(--cyan)
+        );
+}
+
+
+.score-ring-label {
+
+    font-size:
+        48px;
+
+    font-weight:
+        800;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--indigo),
+            var(--cyan)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* ============================================================
+   19. STAT CARDS
+   ============================================================ */
+
+.stat-card {
+
+    padding:
+        22px;
+
+    text-align:
+        center;
+}
+
+
+.stat-value {
+
+    font-size:
+        30px;
+
+    font-weight:
+        800;
+
+    color:
+        var(--app-text);
+}
+
+
+.stat-label {
+
+    margin-top:
+        5px;
+
+    font-size:
+        13px;
+
+    color:
+        var(--slate-500);
+}
+
+
+/* ============================================================
+   20. TAGS
+   ============================================================ */
+
+.tag {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    padding:
+        5px 11px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        650;
+
+    border:
+        1px solid;
+}
+
+
+.tag-match {
+
+    background:
+        rgba(16, 185, 129, 0.10);
+
+    color:
+        var(--emerald);
+
+    border-color:
+        rgba(16, 185, 129, 0.25);
+}
+
+
+.tag-miss {
+
+    background:
+        rgba(239, 68, 68, 0.10);
+
+    color:
+        var(--red);
+
+    border-color:
+        rgba(239, 68, 68, 0.25);
+}
+
+
+.tag-partial {
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    color:
+        var(--amber);
+
+    border-color:
+        rgba(245, 158, 11, 0.25);
+}
+
+
+.tag-neutral {
+
+    background:
+        rgba(100, 116, 139, 0.10);
+
+    color:
+        var(--slate-500);
+
+    border-color:
+        rgba(100, 116, 139, 0.20);
+}
+
+
+/* ============================================================
+   21. PROGRESS BAR
+   ============================================================ */
+
+.progress-track {
+
+    height:
+        8px;
+
+    background:
+        rgba(148, 163, 184, 0.18);
+
+    border-radius:
+        999px;
+
+    overflow:
+        hidden;
+}
+
+
+.progress-fill {
+
+    height:
+        100%;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--indigo),
+            var(--blue),
+            var(--cyan)
+        );
+
+    transition:
+        width 500ms ease;
+}
+
+
+/* ============================================================
+   22. SECTION HEADERS
+   ============================================================ */
+
+.section-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding-bottom:
+        12px;
+
+    margin-bottom:
+        18px;
+
+    border-bottom:
+        1px solid rgba(148, 163, 184, 0.20);
+
+    color:
+        var(--app-text);
+
+    font-weight:
+        700;
+}
+
+
+/* ============================================================
+   23. BADGES
+   ============================================================ */
+
+.badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+.badge-success {
+
+    background:
+        rgba(16, 185, 129, 0.12);
+
+    color:
+        var(--emerald);
+}
+
+
+.badge-warning {
+
+    background:
+        rgba(245, 158, 11, 0.12);
+
+    color:
+        var(--amber);
+}
+
+
+.badge-danger {
+
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    color:
+        var(--red);
+}
+
+
+.badge-info {
+
+    background:
+        rgba(37, 99, 235, 0.12);
+
+    color:
+        var(--blue);
+}
+
+
+/* ============================================================
+   24. DIVIDERS
+   ============================================================ */
+
+[data-testid="stAppViewContainer"] hr {
+
+    border:
+        none !important;
+
+    border-top:
+        1px solid rgba(148, 163, 184, 0.20) !important;
+
+    margin:
+        24px 0 !important;
+}
+
+
+/* ============================================================
+   25. SELECTBOX
+   ============================================================ */
+
+[data-testid="stSelectbox"] label {
+
+    color:
+        var(--app-text) !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+
+    background:
+        var(--app-surface) !important;
+
+    color:
+        var(--app-text) !important;
+
+    border-color:
+        rgba(148, 163, 184, 0.30) !important;
+
+    border-radius:
+        12px !important;
+}
+
+
+/* ============================================================
+   26. TABS
+   ============================================================ */
+
+[data-testid="stTabs"] [data-baseweb="tab"] {
+
+    color:
+        var(--slate-500) !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+[data-testid="stTabs"] [aria-selected="true"] {
+
+    color:
+        var(--indigo) !important;
+}
+
+
+[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--indigo),
+            var(--cyan)
+        ) !important;
+}
+
+
+/* ============================================================
+   27. LINK BUTTON
+   ============================================================ */
+
+.stLinkButton > a {
+
+    border-radius:
+        12px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--indigo),
+            var(--blue)
+        ) !important;
+
+    border:
+        none !important;
+
+    color:
+        #ffffff !important;
+
+    font-weight:
+        650 !important;
+
+    box-shadow:
+        var(--shadow-primary) !important;
+
+    transition:
+        all 180ms ease !important;
+}
+
+
+.stLinkButton > a:hover {
+
+    color:
+        #ffffff !important;
+
+    transform:
+        translateY(-2px);
+
+    text-decoration:
+        none !important;
+}
+
+
+/* ============================================================
+   28. HOME / HERO CARDS
+   ============================================================ */
+
+.hero-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        50px 40px;
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #1e1b4b 55%,
+            #0e7490
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+
+.hero-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    right:
+        -100px;
+
+    top:
+        -120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(129, 140, 248, 0.35),
+            transparent 70%
+        );
+}
+
+
+.hero-card h1,
+.hero-card h2,
+.hero-card h3,
+.hero-card p {
+
+    position:
+        relative;
+
+    color:
+        #ffffff !important;
+}
+
+
+.hero-card .eyebrow {
+
+    font-size:
+        12px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        0.14em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        #a5b4fc !important;
+}
+
+
+.hero-card .hero-title {
+
+    font-size:
+        clamp(2rem, 4vw, 3.5rem);
+
+    line-height:
+        1.05;
+
+    font-weight:
+        800;
+
+    margin:
+        12px 0;
+}
+
+
+.hero-card .hero-description {
+
+    max-width:
+        720px;
+
+    color:
+        #cbd5e1 !important;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.7;
+}
+
+
+/* ============================================================
+   29. SCORE BUTTON
+   ============================================================ */
+
+.analyze-button {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    min-height:
+        54px;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--indigo),
+            var(--blue)
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 12px 30px rgba(79, 70, 229, 0.25);
+}
+
+
+/* ============================================================
+   30. EMPTY STATE
+   ============================================================ */
+
+.empty-state {
+
+    padding:
+        45px 25px;
+
+    text-align:
+        center;
+
+    border-radius:
+        18px;
+
+    border:
+        1px dashed rgba(148, 163, 184, 0.30);
+
+    background:
+        var(--app-surface);
+
+    color:
+        var(--app-text);
+}
+
+
+/* ============================================================
+   31. SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+
+    width:
+        8px;
+
+    height:
+        8px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        var(--app-bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #94a3b8;
+
+    border-radius:
+        999px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--indigo);
+}
+
+
+/* ============================================================
+   32. FOCUS
+   ============================================================ */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+
+    outline:
+        3px solid rgba(79, 70, 229, 0.30) !important;
+
+    outline-offset:
+        2px !important;
+}
+
+
+/* ============================================================
+   33. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    [data-testid="stMainBlockContainer"] {
+
+        padding-left:
+            1rem !important;
+
+        padding-right:
+            1rem !important;
+    }
+
+    .hero-card {
+
+        padding:
+            35px 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    [data-testid="stMainBlockContainer"] {
+
+        padding-top:
+            1rem !important;
+    }
+
+    [data-testid="stAppViewContainer"] main h1 {
+
+        font-size:
+            2rem !important;
+    }
+
+    .hero-card {
+
+        border-radius:
+            18px;
+
+        padding:
+            30px 20px;
+    }
+
+    .score-ring-label {
+
+        font-size:
+            40px;
+    }
+}
+
+
+/* ============================================================
+   34. DARK THEME ENHANCEMENT
+   ============================================================ */
+
+/*
+   When Streamlit itself is in DARK mode,
+   its --background-color / --secondary-background-color /
+   --text-color variables are used above.
+
+   The following makes the visual hierarchy stronger.
+*/
+
+[data-testid="stAppViewContainer"] {
+
+    transition:
+        background 200ms ease;
+}
+
+
+/* Dark-mode compatible surfaces */
+
+.card,
+.ats-card,
+.score-card,
+.stat-card,
+[data-testid="stExpander"],
+[data-testid="stFileUploader"] section,
+[data-testid="stRadio"] {
+
+    color:
+        var(--app-text);
+}
+
+
+/* ============================================================
+   35. DARK MODE — STREAMLIT COLOR OVERRIDES
+   ============================================================ */
+
+/*
+   Streamlit does not provide a universal [data-theme="dark"]
+   selector, so we intentionally avoid depending on one.
+
+   The application inherits Streamlit's own dark variables.
+*/
+
+
+/* ============================================================
+   36. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+
+
+/* ============================================================
+   LANDING PAGE — ANALYZE CTA
+   ============================================================ */
+
+div[data-testid="stButton"]:has(button[key="landing_analyze_btn"]) {
+    max-width: 480px !important;
+    margin: 24px auto 30px auto !important;
+}
+
+
+div[data-testid="stButton"]:has(button[key="landing_analyze_btn"]) > button {
+
+    min-height: 58px !important;
+
+    border-radius: 16px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #2563eb 55%,
+            #06b6d4
+        ) !important;
+
+    border: none !important;
+
+    color: #ffffff !important;
+
+    font-size: 16px !important;
+
+    font-weight: 750 !important;
+
+    letter-spacing: 0.01em !important;
+
+    box-shadow:
+        0 14px 35px rgba(79, 70, 229, 0.30) !important;
+
+    transition:
+        all 0.2s ease !important;
+}
+
+
+div[data-testid="stButton"]:has(button[key="landing_analyze_btn"])
+> button p {
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    font-weight: 750 !important;
+}
+
+
+div[data-testid="stButton"]:has(button[key="landing_analyze_btn"])
+> button:hover {
+
+    transform:
+        translateY(-4px) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4338ca,
+            #1d4ed8 55%,
+            #0891b2
+        ) !important;
+
+    box-shadow:
+        0 20px 45px rgba(79, 70, 229, 0.38) !important;
+}
+
+
+/* ============================================================
+   ATS RESUME SCORER
+   FINAL UI OVERRIDE
+   Sidebar + Buttons + Dark/Light Theme Visibility
+   ============================================================ */
+
+
+/* ============================================================
+   1. GLOBAL DESIGN TOKENS
+   ============================================================ */
+
+:root {
+    --ats-indigo: #6366f1;
+    --ats-indigo-dark: #4f46e5;
+    --ats-blue: #2563eb;
+    --ats-cyan: #06b6d4;
+
+    --ats-navy: #0f172a;
+    --ats-navy-2: #111827;
+    --ats-navy-3: #1e293b;
+
+    --ats-white: #ffffff;
+    --ats-text: #0f172a;
+    --ats-muted: #64748b;
+
+    --ats-border: #e2e8f0;
+
+    --ats-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    --ats-shadow-blue:
+        0 12px 30px rgba(79, 70, 229, 0.25);
+}
+
+
+/* ============================================================
+   2. MAIN STREAMLIT APP
+   ============================================================ */
+
+.stApp {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #f8fafc 55%,
+            #eef2ff 100%
+        ) !important;
+
+    color: var(--ats-text) !important;
+}
+
+
+/* Main content text */
+
+/* ============================================================
+   SAFE GLOBAL FONT
+   Do NOT apply font-family to every span/div because
+   Streamlit uses spans for Material Symbols icons.
+   ============================================================ */
+
+.stApp {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* Normal text areas */
+
+.stApp p,
+.stApp label {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* Headings */
+
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4,
+.stApp h5,
+.stApp h6 {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* ============================================================
+   RESTORE STREAMLIT MATERIAL ICONS
+   ============================================================ */
+
+span.material-symbols-rounded,
+span.material-symbols-outlined,
+span.material-symbols-sharp,
+span[class*="material-symbols"] {
+
+    font-family:
+        "Material Symbols Rounded",
+        "Material Symbols Outlined",
+        "Material Symbols Sharp" !important;
+
+    font-weight:
+        normal !important;
+
+    font-style:
+        normal !important;
+
+    font-size:
+        24px !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        normal !important;
+
+    text-transform:
+        none !important;
+
+    white-space:
+        nowrap !important;
+
+    word-wrap:
+        normal !important;
+
+    direction:
+        ltr !important;
+
+    -webkit-font-feature-settings:
+        "liga" !important;
+
+    -webkit-font-smoothing:
+        antialiased !important;
+}
+
+/* ============================================================
+   3. SIDEBAR — NEW DARK NAVIGATION
+   ============================================================ */
+
+section[data-testid="stSidebar"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #0f172a 0%,
+            #111827 45%,
+            #172554 100%
+        ) !important;
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.08) !important;
+
+    box-shadow:
+        8px 0 30px rgba(15, 23, 42, 0.18) !important;
+}
+
+
+/* Sidebar inner container */
+
+section[data-testid="stSidebar"] > div {
+
+    background:
+        transparent !important;
+}
+
+
+/* Sidebar ALL text */
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div {
+
+    color:
+        #e5e7eb !important;
+}
+
+
+/* Sidebar headings */
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+
+    color:
+        #ffffff !important;
+
+    font-weight:
+        750 !important;
+}
+
+
+/* ============================================================
+   4. NAVIGATION TITLE
+   ============================================================ */
+
+section[data-testid="stSidebar"] h2 {
+
+    font-size:
+        20px !important;
+
+    letter-spacing:
+        -0.01em !important;
+
+    margin-bottom:
+        18px !important;
+}
+
+
+/* ============================================================
+   5. NAVIGATION BUTTONS
+   ============================================================ */
+
+/*
+   All sidebar buttons get a completely new appearance.
+*/
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button {
+
+    width:
+        100% !important;
+
+    min-height:
+        52px !important;
+
+    margin:
+        5px 0 !important;
+
+    padding:
+        0.75rem 1rem !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10) !important;
+
+    border-radius:
+        13px !important;
+
+    background:
+        rgba(255, 255, 255, 0.055) !important;
+
+    color:
+        #f8fafc !important;
+
+    font-size:
+        15px !important;
+
+    font-weight:
+        650 !important;
+
+    text-align:
+        left !important;
+
+    box-shadow:
+        none !important;
+
+    transition:
+        all 0.2s ease !important;
+}
+
+
+/* Navigation text */
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button p,
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button span {
+
+    color:
+        #f8fafc !important;
+
+    -webkit-text-fill-color:
+        #f8fafc !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+/* Navigation hover */
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.35),
+            rgba(37, 99, 235, 0.25)
+        ) !important;
+
+    border-color:
+        rgba(129, 140, 248, 0.65) !important;
+
+    transform:
+        translateX(4px) !important;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button:hover p,
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"]
+> button:hover span {
+
+    color:
+        #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+}
+
+
+/* ============================================================
+   6. SIDEBAR DIVIDERS
+   ============================================================ */
+
+section[data-testid="stSidebar"] hr {
+
+    border:
+        none !important;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12) !important;
+
+    margin:
+        24px 0 !important;
+}
+
+
+/* ============================================================
+   7. SIDEBAR ACCOUNT AREA
+   ============================================================ */
+
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+
+    color:
+        #94a3b8 !important;
+}
+
+
+/* Account email */
+
+section[data-testid="stSidebar"] a {
+
+    color:
+        #93c5fd !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+/* Sign out */
+
+section[data-testid="stSidebar"]
+div[data-testid="stButton"] > button {
+
+    color:
+        #f8fafc !important;
+}
+
+
+/* ============================================================
+   8. MAIN PRIMARY BUTTON
+   ============================================================ */
+
+div[data-testid="stButton"] > button[kind="primary"],
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] {
+
+    min-height:
+        56px !important;
+
+    border:
+        none !important;
+
+    border-radius:
+        15px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1 0%,
+            #4f46e5 35%,
+            #2563eb 70%,
+            #06b6d4 100%
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+
+    font-size:
+        16px !important;
+
+    font-weight:
+        750 !important;
+
+    letter-spacing:
+        0.01em !important;
+
+    box-shadow:
+        0 12px 28px rgba(79, 70, 229, 0.28) !important;
+
+    transition:
+        all 0.22s ease !important;
+}
+
+
+/* Primary button text */
+
+div[data-testid="stButton"] > button[kind="primary"] p,
+div[data-testid="stButton"] > button[kind="primary"] span,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] p,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"] span {
+
+    color:
+        #ffffff !important;
+
+    -webkit-text-fill-color:
+        #ffffff !important;
+
+    font-weight:
+        750 !important;
+}
+
+
+/* Primary hover */
+
+div[data-testid="stButton"] > button[kind="primary"]:hover,
+div[data-testid="stButton"] > button[data-testid="baseButton-primary"]:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5 0%,
+            #4338ca 35%,
+            #1d4ed8 70%,
+            #0891b2 100%
+        ) !important;
+
+    transform:
+        translateY(-3px) !important;
+
+    box-shadow:
+        0 18px 40px rgba(79, 70, 229, 0.38) !important;
+}
+
+
+/* ============================================================
+   9. UPLOAD BUTTON
+   ============================================================ */
+
+section[data-testid="stFileUploader"]
+button {
+
+    min-height:
+        44px !important;
+
+    border-radius:
+        11px !important;
+
+    border:
+        1px solid #cbd5e1 !important;
+
+    background:
+        #ffffff !important;
+
+    color:
+        #0f172a !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+section[data-testid="stFileUploader"]
+button p,
+section[data-testid="stFileUploader"]
+button span {
+
+    color:
+        #0f172a !important;
+
+    -webkit-text-fill-color:
+        #0f172a !important;
+}
+
+
+section[data-testid="stFileUploader"]
+button:hover {
+
+    border-color:
+        #6366f1 !important;
+
+    background:
+        #eef2ff !important;
+}
+
+
+/* ============================================================
+   10. HERO CARD
+   ============================================================ */
+
+.ats-hero,
+div[data-testid="stMarkdownContainer"] .ats-hero {
+
+    border-radius:
+        24px !important;
+
+    overflow:
+        hidden !important;
+}
+
+
+/* ============================================================
+   11. RADIO BUTTONS
+   ============================================================ */
+
+div[data-testid="stRadio"] label {
+
+    color:
+        #0f172a !important;
+
+    font-weight:
+        550 !important;
+}
+
+
+/* Radio text */
+
+div[data-testid="stRadio"] label p,
+div[data-testid="stRadio"] label span {
+
+    color:
+        #0f172a !important;
+}
+
+
+/* ============================================================
+   12. INFO / WARNING / SUCCESS BOXES
+   ============================================================ */
+
+div[data-testid="stAlert"] {
+
+    border-radius:
+        14px !important;
+
+    border:
+        1px solid rgba(148, 163, 184, 0.25) !important;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05) !important;
+}
+
+
+/* ============================================================
+   13. INPUT FIELDS
+   ============================================================ */
+
+section[data-testid="stSidebar"]
+input {
+
+    background:
+        #020617 !important;
+
+    color:
+        #f8fafc !important;
+
+    border:
+        1px solid #334155 !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+section[data-testid="stSidebar"]
+input::placeholder {
+
+    color:
+        #64748b !important;
+}
+
+
+/* ============================================================
+   14. DEPLOY / TOP HEADER
+   ============================================================ */
+
+header[data-testid="stHeader"] {
+
+    background:
+        #0b1120 !important;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* Top header text */
+
+header[data-testid="stHeader"] button,
+header[data-testid="stHeader"] span,
+header[data-testid="stHeader"] p {
+
+    color:
+        #f8fafc !important;
+}
+
+
+/* Deploy button */
+
+header[data-testid="stHeader"] button {
+
+    background:
+        rgba(255, 255, 255, 0.06) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12) !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+/* ============================================================
+   15. METRIC / FEATURE CARDS
+   ============================================================ */
+
+div[data-testid="stMetric"] {
+
+    background:
+        rgba(255, 255, 255, 0.92) !important;
+
+    border:
+        1px solid #e2e8f0 !important;
+
+    border-radius:
+        16px !important;
+
+    padding:
+        18px !important;
+
+    box-shadow:
+        0 6px 20px rgba(15, 23, 42, 0.05) !important;
+}
+
+
+div[data-testid="stMetricLabel"] {
+
+    color:
+        #64748b !important;
+}
+
+
+div[data-testid="stMetricValue"] {
+
+    color:
+        #0f172a !important;
+}
+
+
+/* ============================================================
+   16. DARK THEME SUPPORT
+   ============================================================ */
+
+/*
+   Streamlit's dark theme can override foreground colors.
+   These rules explicitly restore readability.
+*/
+
+@media (prefers-color-scheme: dark) {
+
+    .stApp {
+
+        background:
+            #0b1120 !important;
+
+        color:
+            #f8fafc !important;
+    }
+
+
+    /* Main content */
+
+    .stApp p,
+    .stApp label,
+    .stApp span {
+
+        color:
+            #e5e7eb !important;
+    }
+
+
+    /* Headings */
+
+    .stApp h1,
+    .stApp h2,
+    .stApp h3,
+    .stApp h4,
+    .stApp h5,
+    .stApp h6 {
+
+        color:
+            #ffffff !important;
+    }
+
+
+    /* Sidebar remains dark */
+
+    section[data-testid="stSidebar"] {
+
+        background:
+            linear-gradient(
+                180deg,
+                #020617,
+                #0f172a 50%,
+                #172554
+            ) !important;
+    }
+
+
+    /* Navigation */
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stButton"] > button {
+
+        background:
+            rgba(255, 255, 255, 0.06) !important;
+
+        border-color:
+            rgba(255, 255, 255, 0.12) !important;
+
+        color:
+            #ffffff !important;
+    }
+
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stButton"] > button p,
+    section[data-testid="stSidebar"]
+    div[data-testid="stButton"] > button span {
+
+        color:
+            #ffffff !important;
+
+        -webkit-text-fill-color:
+            #ffffff !important;
+    }
+
+
+    /* Main buttons */
+
+    div[data-testid="stButton"] > button:not([kind="primary"]) {
+
+        background:
+            #1e293b !important;
+
+        border-color:
+            #475569 !important;
+
+        color:
+            #f8fafc !important;
+    }
+
+
+    div[data-testid="stButton"] > button:not([kind="primary"]) p,
+    div[data-testid="stButton"] > button:not([kind="primary"]) span {
+
+        color:
+            #f8fafc !important;
+
+        -webkit-text-fill-color:
+            #f8fafc !important;
+    }
+
+
+    /* Primary stays colorful */
+
+    div[data-testid="stButton"] > button[kind="primary"] {
+
+        background:
+            linear-gradient(
+                135deg,
+                #6366f1,
+                #2563eb,
+                #06b6d4
+            ) !important;
+
+        color:
+            #ffffff !important;
+    }
+
+
+    div[data-testid="stButton"] > button[kind="primary"] p,
+    div[data-testid="stButton"] > button[kind="primary"] span {
+
+        color:
+            #ffffff !important;
+
+        -webkit-text-fill-color:
+            #ffffff !important;
+    }
+
+
+    /* Cards */
+
+    div[data-testid="stMetric"] {
+
+        background:
+            #111827 !important;
+
+        border-color:
+            #334155 !important;
+    }
+
+
+    div[data-testid="stMetricValue"] {
+
+        color:
+            #ffffff !important;
+    }
+
+
+    div[data-testid="stMetricLabel"] {
+
+        color:
+            #94a3b8 !important;
+    }
+
+
+    /* Radio */
+
+    div[data-testid="stRadio"] label p,
+    div[data-testid="stRadio"] label span {
+
+        color:
+            #e5e7eb !important;
+    }
+
+
+    /* File uploader */
+
+    section[data-testid="stFileUploader"] {
+
+        color:
+            #e5e7eb !important;
+    }
+
+
+    section[data-testid="stFileUploader"] button {
+
+        background:
+            #1e293b !important;
+
+        border-color:
+            #475569 !important;
+
+        color:
+            #ffffff !important;
+    }
+
+
+    section[data-testid="stFileUploader"] button p,
+    section[data-testid="stFileUploader"] button span {
+
+        color:
+            #ffffff !important;
+
+        -webkit-text-fill-color:
+            #ffffff !important;
+    }
+}
+
+
+/* ============================================================
+   17. MOBILE / SMALL SCREEN
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    section[data-testid="stSidebar"]
+    div[data-testid="stButton"] > button {
+
+        min-height:
+            48px !important;
+
+        font-size:
+            14px !important;
+    }
+
+
+    div[data-testid="stButton"] > button[kind="primary"] {
+
+        min-height:
+            52px !important;
+    }
+}
+
+
+/* ============================================================
+   18. REDUCE MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}

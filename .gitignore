@@ -1,4 +1,37 @@
-.venv/
+# Python
 __pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
 .env
-*.pyc
+.env.*
+!.env.example
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+backend/logs/
+
+# Temporary files
+*.tmp
+
+
+ml_model/
+# Local ML model artifacts
+ml_model/
